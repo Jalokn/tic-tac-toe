@@ -1,6 +1,6 @@
 import React from "react";
 
-type Player = "X" | "O" | "Both" | null;
+type Player = "X" | "O" | "BOTH" | null;
 
 const Square = ({
   value,

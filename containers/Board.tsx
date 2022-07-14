@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Square from "../components/Square";
 
-type Player = "X" | "O" | "Both" | null;
+type Player = "X" | "O" | "BOTH" | null;
 
 const calculateWinner = (squares: Player[]) => {
   const lines = [
@@ -53,15 +53,15 @@ const Board = () => {
       setWinner(w);
     }
     if (!w && !squares.filter((square) => !square).length) {
-      setWinner("Both");
+      setWinner("BOTH");
     }
   }, [squares]);
 
   return (
     <div>
       {!winner && <p> Hey {currentPlayer}, it&apos;s your turn</p>}
-      {winner && winner !== "Both" && <p>You Won {winner}</p>}
-      {winner && winner === "Both" && <p>You Tied!</p>}
+      {winner && winner !== "BOTH" && <p>You Won {winner}</p>}
+      {winner && winner === "BOTH" && <p>You Tied!</p>}
       <div className="grid">
         {Array(9)
           .fill(null)
